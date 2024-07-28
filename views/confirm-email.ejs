@@ -1,0 +1,119 @@
+<!-- views/confirm-email.ejs
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Email</title>
+</head>
+<body>
+  <h1>Confirm your email</h1>
+  <p>Email: <%= user.email %></p>
+  <form action="/auth/confirm-email" method="POST">
+    <button type="submit">Confirm</button>
+  </form>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Email</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    nav {
+      background: #ff5353;
+      padding: 20px 10px;
+    }
+    nav ul {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+    nav li {
+      list-style-type: none;
+    }
+    nav a {
+      color: #fff;
+      font-size: 18px;
+      background: rgba(255, 255, 255, 0.2);
+      text-decoration: none;
+      padding: 10px;
+      display: block;
+    }
+    main {
+      max-width: 960px;
+      margin: 30px auto;
+      padding: 0 10px;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #ff5353;
+    }
+    p {
+      font-size: 18px;
+    }
+    form {
+      text-align: center;
+      margin-top: 20px;
+    }
+    button {
+      background: #ff5353;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #ff7575;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <% if(user) { %>
+        <li><a href="/auth/logout">Log out</a></li>
+      <% } else { %>
+        <li><a href="/auth/login">Login</a></li>
+      <% } %>
+      <li><a href="/">Homepage</a></li>
+      <li><a href="/profile">Profile</a></li>
+    </ul>
+  </nav>
+  <main>
+    <header>
+      <h1>Confirm Email</h1>
+    </header>
+    <div class="container">
+      <!-- <p>Email: <%= user.email %></p> -->
+      <form action="/auth/confirm-email" method="POST">
+        <button type="submit">Confirm</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
+
+
